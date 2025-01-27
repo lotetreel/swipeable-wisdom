@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Swipeable Wisdom</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -35,7 +35,6 @@
             <div class="slider">
                 <!-- Slides injected by JavaScript -->
             </div>
-            <div class="instruction">Swipe left or right to navigate</div>
         </div>
         <div class="navigation">
             <button class="nav-button" id="prevBtn">
@@ -60,5 +59,17 @@
     </div>
 
     <script src="script.js"></script>
+    <!-- Mobile viewport height hack -->
+    <script>
+    // Mobile viewport height adjustment
+    function updateViewportHeight() {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
+    window.addEventListener('resize', updateViewportHeight);
+    window.addEventListener('orientationchange', updateViewportHeight);
+    updateViewportHeight();
+    </script>
 </body>
 </html>
