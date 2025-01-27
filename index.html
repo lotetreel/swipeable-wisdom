@@ -9,73 +9,34 @@
 </head>
 <body>
     <div class="background-wrapper"></div>
-    <div class="container">
+    
+    <!-- Landing Page -->
+    <div class="container landing-page active">
+        <h1 class="title">Select a Wisdom</h1>
+        <div class="hadith-selector">
+            <div class="hadith-option" data-hadith="1">
+                <h2>Wisdom of the Wise</h2>
+                <p>10 characteristics of the intelligent believer</p>
+            </div>
+            <div class="hadith-option" data-hadith="2">
+                <h2>Knowledge & Speech</h2>
+                <p>Guidance on speaking with knowledge</p>
+            </div>
+            <div class="hadith-option" data-hadith="3">
+                <h2>Brotherhood</h2>
+                <p>Coming soon...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hadith Viewer -->
+    <div class="container hadith-viewer">
         <div class="slider-container">
             <div class="slider">
-                <!-- All 12 Slides -->
-                <div class="slide active">
-                    <div class="arabic">رَسُولُ اللهِ صَلَّى اللهُ عَلَيْهِ وَآلِهِ</div>
-                    <div class="english">The Messenger of Allah, peace be upon him and his family, said:</div>
-                </div>
-                
-                <div class="slide">
-                    <div class="arabic">صِفَةُ الْعَاقِلِ</div>
-                    <div class="english">The characteristics of the wise person are:</div>
-                </div>
-
-                <div class="slide">
-                    <div class="arabic">أَنْ يَحْلُمَ عَمَّنْ جَهِلَ عَلَيْهِ</div>
-                    <div class="english">That he shows forbearance towards those who act ignorantly towards him,</div>
-                </div>
-
-                <div class="slide">
-                    <div class="arabic">وَيَتَجَاوَزَ عَمَّنْ ظَلَمَهُ</div>
-                    <div class="english">And he forgives those who wrong him,</div>
-                </div>
-
-                <div class="slide">
-                    <div class="arabic">وَيَتَوَاضَعَ لِمَنْ هُوَ دُونَهُ</div>
-                    <div class="english">And he shows humility to those below him in status,</div>
-                </div>
-
-                <div class="slide">
-                    <div class="arabic">وَيُسَابِقَ مَنْ فَوْقَهُ فِي طَلَبِ الْبِرِّ</div>
-                    <div class="english">And he competes with those above him in seeking righteousness,</div>
-                </div>
-
-                <div class="slide">
-                    <div class="arabic">وَإِذَا أَرَادَ أَنْ يَتَكَلَّمَ تَدَبَّرَ فَإِنْ كَانَ خَيْرًا تَكَلَّمَ فَغَنِمَ</div>
-                    <div class="english">And when he wishes to speak, he reflects—if it is good, he speaks and gains reward,</div>
-                </div>
-
-                <div class="slide">
-                    <div class="arabic">وَإِنْ كَانَ شَرًّا سَكَتَ فَسَلِمَ</div>
-                    <div class="english">And if it is evil, he remains silent and stays safe,</div>
-                </div>
-
-                <div class="slide">
-                    <div class="arabic">وَإِذَا عَرَضَتْ لَهُ فِتْنَةٌ اسْتَعْصَمَ بِاللهِ وَأَمْسَكَ يَدَهُ وَلِسَانَهُ</div>
-                    <div class="english">And when temptation presents itself to him, he seeks protection in Allah and restrains his hand and his tongue,</div>
-                </div>
-
-                <div class="slide">
-                    <div class="arabic">وَإِذَا رَأَى فَضِيلَةً انْتَهَزَ بِهَا</div>
-                    <div class="english">And when he sees virtue, he hastens towards it,</div>
-                </div>
-
-                <div class="slide">
-                    <div class="arabic">لَا يُفَارِقُهُ الْحَيَاءُ ، وَلَا يَبْدُو مِنْهُ الْحِرْصُ</div>
-                    <div class="english">Modesty never leaves him, and greed never appears from him,</div>
-                </div>
-
-                <div class="slide">
-                    <div class="arabic">فَتِلْكَ عَشْرُ خِصَالٍ يُعْرَفُ بِهَا الْعَاقِلُ</div>
-                    <div class="english">These are ten characteristics by which the wise person is known.</div>
-                </div>
+                <!-- Slides injected by JavaScript -->
             </div>
             <div class="instruction">Swipe left or right to navigate</div>
         </div>
-        
         <div class="navigation">
             <button class="nav-button" id="prevBtn">
                 <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
@@ -92,11 +53,12 @@
                     <path d="M9 18l6-6-6-6" />
                 </svg>
             </button>
-            <button class="nav-button" id="restartBtn" style="display: none;">
-                Restart
+            <button class="nav-button" id="backBtn">
+                Back to Menu
             </button>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
