@@ -138,6 +138,8 @@ body {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .hadith-viewer.active {
@@ -146,8 +148,7 @@ body {
 }
 
 .slider-container {
-    width: 100%;
-    height: calc(100vh - 140px);
+    flex: 1;
     overflow: hidden;
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
@@ -155,6 +156,7 @@ body {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     margin: 20px 0;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: 0;
 }
 
 .slider {
@@ -175,6 +177,7 @@ body {
     gap: 20px;
     opacity: 0.3;
     transition: opacity 0.5s ease;
+    height: auto;
 }
 
 .slide.active {
@@ -202,8 +205,6 @@ body {
 
 /* Navigation */
 .navigation {
-    width: 100%;
-    max-width: 800px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -214,6 +215,8 @@ body {
     border-radius: 20px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 800px;
 }
 
 .nav-button {
@@ -286,39 +289,67 @@ body {
 @media (max-width: 768px) {
     .container {
         padding: 10px;
+        height: 100%;
+        min-height: 100vh;
+        position: relative;
+    }
+
+    .hadith-viewer {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
     }
 
     .slider-container {
-        height: calc(100vh - 120px);
+        flex: 1;
+        height: auto;
+        min-height: 0;
         margin: 10px 0;
-    }
-
-    .slide {
-        padding: 20px 15px;
-    }
-
-    .arabic {
-        font-size: 1.8em;
-        padding: 0 10px;
-    }
-
-    .english {
-        font-size: 1.1em;
+        overflow-y: auto;
     }
 
     .navigation {
+        position: sticky;
+        bottom: 10px;
+        margin-top: auto;
         padding: 10px;
         border-radius: 15px;
-    }
-
-    .nav-button {
-        padding: 10px 16px;
-        font-size: 0.9em;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.12);
     }
 
     .progress {
+        grid-column: span 2;
+        margin: 5px 0;
+    }
+
+    .nav-button {
+        padding: 12px;
+        font-size: 0.9em;
+        width: 100%;
+        justify-content: center;
+    }
+
+    #backBtn {
+        grid-column: span 2;
+    }
+
+    .slide {
+        padding: 15px;
+        gap: 15px;
+        height: auto;
+    }
+
+    .arabic {
+        font-size: 1.6em;
+        line-height: 1.6;
+    }
+
+    .english {
         font-size: 1em;
-        padding: 6px 12px;
+        line-height: 1.4;
     }
 
     /* Mobile Hadith Options */
@@ -338,5 +369,25 @@ body {
     
     .hadith-option p {
         font-size: 1em;
+    }
+}
+
+/* Additional fixes for very small screens */
+@media (max-width: 360px) {
+    .navigation {
+        padding: 8px;
+    }
+
+    .nav-button {
+        padding: 8px;
+        font-size: 0.8em;
+    }
+
+    .arabic {
+        font-size: 1.4em;
+    }
+
+    .english {
+        font-size: 0.9em;
     }
 }
