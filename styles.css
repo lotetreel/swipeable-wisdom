@@ -22,6 +22,7 @@ body {
     background-size: 300% 300%;
     color: white;
     overflow: hidden;
+    overflow-x: hidden; /* Added horizontal overflow prevention */
     position: relative;
     animation: gradientFlow 15s ease infinite;
 }
@@ -144,6 +145,7 @@ body {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
+    overflow: hidden; /* Added overflow control */
 }
 
 .hadith-viewer.active {
@@ -154,13 +156,12 @@ body {
 .slider-container {
     width: 100%;
     height: calc(100% - 100px);
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow: hidden; /* Changed from overflow-y: auto */
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
     border-radius: 24px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    margin: 20px 0;
+    margin: 20px 0 80px; /* Added bottom margin */
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -168,6 +169,7 @@ body {
     min-height: 100%;
     display: flex;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%; /* Ensure slider stays within container */
 }
 
 .slide {
@@ -227,6 +229,7 @@ body {
     width: 100%;
     box-sizing: border-box;
     padding-bottom: calc(15px + env(safe-area-inset-bottom));
+    transform: translateZ(0); /* Hardware acceleration */
 }
 
 .nav-button {
@@ -277,7 +280,7 @@ body {
 
     .slider-container {
         height: calc(100% - 80px) !important;
-        margin: 10px 0;
+        margin: 10px 0 70px; /* Adjusted bottom margin */
     }
 
     .slide {
@@ -329,6 +332,6 @@ body {
 
 @media (hover: none) and (pointer: coarse) {
     .slider-container {
-        overflow-y: auto;
+        overflow: hidden;
     }
 }
